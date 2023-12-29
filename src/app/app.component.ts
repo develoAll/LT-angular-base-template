@@ -12,5 +12,10 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
   title = 'LT-angular-base-template';
-  ruta = environment.texServiceEnvironment
+  textEnv = environment.texServiceEnvironment
+
+  constructor(){
+    console.log(this.textEnv);
+  }
+  
 }
