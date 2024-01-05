@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+
+$my-custom-typography-config: mat.define-typography-config(
+    // $font-family: 'Rancho', // si descomento esto, se aplicara para todos
+    $subtitle-1: mat.define-typography-level(56px, 56px, 400, 'Rancho', $letter-spacing: -0.02em),
+);
+
+@include mat.typography-hierarchy($my-custom-typography-config);

@@ -1,0 +1,91 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// GAMA COLORES
+$paleta: (
+  50: #e0f0ed,
+  100: #b3dad1,
+  200: #80c2b3,
+  300: #4da995,
+  400: #26967e,
+  500: #008467,
+  600: #007c5f,
+  700: #007154,
+  800: #00674a,
+  900: #005439,
+  A100: #86ffcf,
+  A200: #53ffbb,
+  A400: #20ffa7,
+  A700: #07ff9c,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$paleta2: (
+  50: #fef3e4,
+  100: #fce0bc,
+  200: #fbcc8f,
+  300: #f9b862,
+  400: #f7a840,
+  500: #f6991e,
+  600: #f5911a,
+  700: #f38616,
+  800: #f27c12,
+  900: #ef6b0a,
+  A100: #ffffff,
+  A200: #ffefe5,
+  A400: #ffcfb3,
+  A700: #ffbf99,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+// PALETA DE COLORES
+$lt-primary: mat.define-palette($paleta);  // personalizados
+$lt-accent: mat.define-palette($paleta2);  // personalizados
+$lt-warn: mat.define-palette(mat.$green-palette);  // un color ya establecido
+
+// TEMA PROPIO
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $lt-primary,
+      accent: $lt-accent,
+      warn: $lt-warn,
+    ),
+    // typography: mat.define-typography-config(),
+    // density: 0,
+  )
+);
+
+// APLICAR NUESTRO TEMA A ANGULAR
+@include mat.all-component-themes($my-theme);
