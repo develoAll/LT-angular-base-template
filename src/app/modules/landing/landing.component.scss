@@ -1,16 +1,14 @@
 
 .content{
-    height: 130px;
     width: 100%;
     background-color: #073982;
     padding: 1.5rem;
     .navbar {
         display: flex;
-        height: 100%;
         justify-content: space-around;
         .icon_nav{
             width: 300px;
-            background-color: #d2dd32;
+            background-color: #fff;
         }
         .header_lu{
             display: flex;

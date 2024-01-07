@@ -1,27 +1,54 @@
 <div>
-    <div class="bg-teal-300 px-32 py-14">
+    <section class="bg-white px-32 py-14">
         <div class="flex items-center">
             <div class="p-12">
-                <h3 class="text-lg">Sobre nosotros</h3>
-                <p>Bienvenidos a la Universidad Nacional Federico Villareal</p>
-                <p>Empezamios nueva etapa</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem corporis sit voluptatibus
-                    asperiores, placeat quibusdam dolorum quod deserunt est quis, minima provident nisi cumque! Amet sequi eaque
-                    tenetur dignissimos ipsa!
+                <h2 class="text-lg">SOBRE NOSOTROS</h2>
+                <h1>Bienvenidos a la Universidad Nacional Federico Villareal</h1>
+                <h3>Empezamios nueva etapa</h3>
+                <p>Nuestra Casa de estudios forma líderes comprometidos con el desarrollo humano, social y ambiental,
+                    ofreciendo educación de calidad, basada en valores como la fraternidad, solidaridad, responsabilidad
+                    y respeto, aplicando la práctica desde el primer ciclo.
                 </p>
             </div>
             <img class="max-w-[36vmax]" src="../../../../assets/images/home/portada.jpg" alt="">
         </div>
-    </div>
+    </section>
+    <section class="bg-blue-200 px-32 py-14">
+        <div class="p-12">
+            <div class="text-center mb-12">
+                <h2 class="text-lg">CATEGORÍA DE CURSO</h2>
+                <h1>Nuestras mejores categorías</h1>
+            </div>
+            <div class="flex flex-wrap gap-4">
+                @for (item of cardTempalte; track item.career) {
+                    <app-course-letter class="min-w-[335px] flex-[383px]" [listCardTempalte]="item"></app-course-letter>
+                }
+            </div>
+        </div>
+    </section>
+    <section class="bg-white px-32 py-14">
+        <div class="flex items-center">
+            <div class="p-12">
+                <h2 class="text-lg">SOBRE NOSOTROS</h2>
+                <h1>Bienvenidos a la Universidad Nacional Federico Villareal</h1>
+                <h3>Empezamios nueva etapa</h3>
+                <p>Nuestra Casa de estudios forma líderes comprometidos con el desarrollo humano, social y ambiental,
+                    ofreciendo educación de calidad, basada en valores como la fraternidad, solidaridad, responsabilidad
+                    y respeto, aplicando la práctica desde el primer ciclo.
+                </p>
+            </div>
+            <img class="max-w-[36vmax]" src="../../../../assets/images/home/portada.jpg" alt="">
+        </div>
+    </section>
     <section>
         <div class="example-label">Raised</div>
         <div class="example-button-row">
-          <button mat-raised-button>Basic</button>
-          <button mat-raised-button color="primary">Primary</button>
-          <button mat-raised-button color="accent">Accent</button>
-          <button mat-raised-button color="warn">Warn</button>
-          <button mat-raised-button disabled>Disabled</button>
-          <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+            <button mat-raised-button>Basic</button>
+            <button mat-raised-button color="primary">Primary</button>
+            <button mat-raised-button color="accent">Accent</button>
+            <button mat-raised-button color="warn">Warn</button>
+            <button mat-raised-button disabled>Disabled</button>
+            <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
         </div>
     </section>
 </div>
