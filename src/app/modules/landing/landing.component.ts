@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { CommonComponentsModule } from '../../shared/modules/common-components.module';
-
 @Component({
   selector: 'app-landing',
   standalone: true,
@@ -11,4 +10,10 @@ import { CommonComponentsModule } from '../../shared/modules/common-components.m
 })
 export class LandingComponent {
 
+  constructor(private router: Router){}
+
+  navHeader( nav: string){
+    this.router.navigate(['landing/'+ nav]);
+  }
+  
 }

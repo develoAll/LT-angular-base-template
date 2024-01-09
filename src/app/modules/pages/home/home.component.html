@@ -1,54 +1,44 @@
 <div>
-    <section class="bg-white px-32 py-14">
-        <div class="flex items-center">
-            <div class="p-12">
-                <h2 class="text-lg">SOBRE NOSOTROS</h2>
-                <h1>Bienvenidos a la Universidad Nacional Federico Villareal</h1>
-                <h3>Empezamios nueva etapa</h3>
-                <p>Nuestra Casa de estudios forma líderes comprometidos con el desarrollo humano, social y ambiental,
+    <section class="bg-white px-[7%] py-14 max-lg:pt-6">
+        <div class="content-sec-one">
+            <div class="text-info">
+                <h2 class="text-lg max-lg:text-center">SOBRE NOSOTROS</h2>
+                <h1 class="max-lg:text-center">Bienvenidos a la Universidad Nacional Federico Villareal</h1>
+                <h3 class="max-lg:text-center">Empezamios nueva etapa</h3>
+                <p class="max-lg:text-center">Nuestra Casa de estudios forma líderes comprometidos con el desarrollo
+                    humano, social y ambiental,
                     ofreciendo educación de calidad, basada en valores como la fraternidad, solidaridad, responsabilidad
                     y respeto, aplicando la práctica desde el primer ciclo.
                 </p>
             </div>
-            <img class="max-w-[36vmax]" src="../../../../assets/images/home/portada.jpg" alt="">
+            <img class="view" ngSrc="../../../../assets/images/home/portada.jpg" width="864" height="650" priority alt="">
         </div>
     </section>
-    <section class="bg-blue-200 px-32 py-14">
-        <div class="p-12">
+    <section class="bg-blue-200 px-[7%] py-14">
+        <div class="p-12 max-lg:p-0">
             <div class="text-center mb-12">
                 <h2 class="text-lg">CATEGORÍA DE CURSO</h2>
                 <h1>Nuestras mejores categorías</h1>
             </div>
-            <div class="flex flex-wrap gap-4">
+            <div class="grid-content">
                 @for (item of cardTempalte; track item.career) {
-                    <app-course-letter class="min-w-[335px] flex-[383px]" [listCardTempalte]="item"></app-course-letter>
+                <app-course-letter [listCardTempalte]="item"></app-course-letter>
                 }
             </div>
         </div>
     </section>
-    <section class="bg-white px-32 py-14">
-        <div class="flex items-center">
-            <div class="p-12">
-                <h2 class="text-lg">SOBRE NOSOTROS</h2>
-                <h1>Bienvenidos a la Universidad Nacional Federico Villareal</h1>
-                <h3>Empezamios nueva etapa</h3>
-                <p>Nuestra Casa de estudios forma líderes comprometidos con el desarrollo humano, social y ambiental,
-                    ofreciendo educación de calidad, basada en valores como la fraternidad, solidaridad, responsabilidad
-                    y respeto, aplicando la práctica desde el primer ciclo.
+    <section class="bg-white px-[7%] py-14 max-lg:pt-6">
+        <div class="content-sec-three">
+            <img class="view rounded-full" ngSrc="../../../../assets/images/home/portada2.jpg" height="300"
+                width="300" alt="">
+            <div class="text-info">
+                <h1 class="max-lg:text-center">Admisión Abierta 2024-I</h1>
+                <p class="max-lg:text-center">Contamos con cursos únicos en el Perú y el mundo, tales como, Ciencias del
+                    fracaso, Ciencias del abandono, Medicina Astral, Obstetricia de Kinesiologas, Ingeniería de
+                    Panadería nuclear, Derechos del dibujito, entre otros. ¿Y tú?, que esperas para iniciar el examen de
+                    admisión, por que recuerda: "Tu fracaso es el éxito de otros, USC".
                 </p>
             </div>
-            <img class="max-w-[36vmax]" src="../../../../assets/images/home/portada.jpg" alt="">
-        </div>
-    </section>
-    <section>
-        <div class="example-label">Raised</div>
-        <div class="example-button-row">
-            <button mat-raised-button>Basic</button>
-            <button mat-raised-button color="primary">Primary</button>
-            <button mat-raised-button color="accent">Accent</button>
-            <button mat-raised-button color="warn">Warn</button>
-            <button mat-raised-button disabled>Disabled</button>
-            <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
         </div>
     </section>
 </div>
