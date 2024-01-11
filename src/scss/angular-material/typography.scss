@@ -2,10 +2,14 @@
 
 $my-custom-typography-config: mat.define-typography-config(
     // $font-family: 'Rancho', // si descomento esto, se aplicara para todos
-    $headline-5: mat.define-typography-level( $font-size: 2.5rem, $line-height: 2.5rem, $font-weight: 700, $font-family: 'Merienda', $letter-spacing: -0.02em),
-    $headline-6: mat.define-typography-level(1.5rem, 2rem, 700, 'Merienda', $letter-spacing: -0.02em),
-    $subtitle-1: mat.define-typography-level(1.2rem, 1.5rem, 700, 'Merienda', $letter-spacing: -0.02em),
-    $body-2: mat.define-typography-level(1rem, 1.5rem, 700, 'Merienda', $letter-spacing: -0.02em),
+    // h1
+    $headline-5: mat.define-typography-level( $font-size: 2.5rem, $line-height: 2.5rem, $font-weight: 500, $font-family: 'Ubuntu', $letter-spacing: -0.02em),
+    // h2
+    $headline-6: mat.define-typography-level(1.5rem, 2rem, 700, 'Ubuntu', $letter-spacing: -0.02em),
+    // h3
+    $subtitle-1: mat.define-typography-level(1.2rem, 1.5rem, 700, 'Ubuntu', $letter-spacing: -0.02em),
+    // p
+    $body-2: mat.define-typography-level(1rem, 1.5rem, 400, 'Ubuntu', $letter-spacing: -0.02em),
 );
 
 @include mat.typography-hierarchy($my-custom-typography-config);

@@ -21,5 +21,16 @@ export class IconsService {
       
     matIconRegistry.addSvgIconSetInNamespace('heroicons_mini', 
       domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/heroicons-mini.svg'));
+
+    matIconRegistry.addSvgIcon('facebook_icon', 
+      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/social-networks/facebook-icono.svg'));
+    matIconRegistry.addSvgIcon('correo_icon', 
+      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/social-networks/correo-icono.svg'));
+    matIconRegistry.addSvgIcon('linkedin_icon', 
+      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/social-networks/linkedin-icono.svg'));
+    matIconRegistry.addSvgIcon('whatsapp_icon', 
+      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/social-networks/whatsapp-icono.svg'));
+    matIconRegistry.addSvgIcon('youtube_icon', 
+      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/social-networks/youtube-icono.svg'));
   }
 }

@@ -1,0 +1,25 @@
+<div class="content-course">
+    <div class="sect">
+        <h2 class="text-center">Logo del curso de {{data.career}}</h2>
+        <img class="w-[7rem] h-[7rem] rounded-full" [src]="data.logo" alt="">
+    </div>
+    <hr>
+    <div class="sect">
+        <h2>{{data.courses.length}} Cursos</h2>
+        <div>
+            @for (item of data.courses; track $index) {
+                <p>{{$index+1}} - {{item}}</p>
+            }
+        </div>
+    </div>
+    <hr>
+    <div class="sect">
+        <h2>{{data.students.length}} Estudiantes</h2>
+        <div>
+            @for (item of data.students; track $index) {
+                <p>{{$index+1}} - {{item.name}} {{item.secondName}}</p>
+            }
+        </div>
+    </div>
+
+</div>

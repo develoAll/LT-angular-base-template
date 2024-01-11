@@ -25,67 +25,63 @@ export class HomeComponent {
           "Fisica",
           "sexologia"
         ],
-        students: 15
-      },
-      {
-        logo: "https://cdn.vox-cdn.com/thumbor/iaVMlcV5rj0OuPejZ7HyqYslLZk=/0x0:800x333/1400x788/filters:focal(334x72:462x200):format(gif)/cdn.vox-cdn.com/uploads/chorus_image/image/55278741/gatsby.0.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: 15
-      },
-      {
-        logo: "https://www.socialpilot.co/wp-content/uploads/2023/02/gif.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: 15
-      },
-      {
-        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: 15
-      },
-      {
-        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: 15
-      },
-      {
-        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: 15
-      },
-      {
-        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: 15
+        students: [
+          {
+            name: "Gonzalo",
+            secondName: "Erick",
+            motherLastName: "Davila",
+            fatherLastName: "Ñahui",
+            edad: 21,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Jairo",
+            secondName: "Anthony",
+            motherLastName: "Caccya",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Gonzalo",
+            secondName: "Erick",
+            motherLastName: "Davila",
+            fatherLastName: "Ñahui",
+            edad: 21,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Renzo",
+            secondName: "Fernando",
+            motherLastName: "Velarde",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Renzo",
+            secondName: "Fernando",
+            motherLastName: "Velarde",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+        ]
       },
       {
         logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
@@ -95,8 +91,262 @@ export class HomeComponent {
           "Fisica",
           "sexologia"
         ],
-        students: 15
-      }
+        students: [
+          {
+            name: "Gonzalo",
+            secondName: "Erick",
+            motherLastName: "Davila",
+            fatherLastName: "Ñahui",
+            edad: 21,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Jairo",
+            secondName: "Anthony",
+            motherLastName: "Caccya",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Gonzalo",
+            secondName: "Erick",
+            motherLastName: "Davila",
+            fatherLastName: "Ñahui",
+            edad: 21,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Renzo",
+            secondName: "Fernando",
+            motherLastName: "Velarde",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Renzo",
+            secondName: "Fernando",
+            motherLastName: "Velarde",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+        ]
+      },
+      {
+        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
+        career: "Medicina",
+        courses: [
+          "Matematica",
+          "Fisica",
+          "sexologia"
+        ],
+        students: [
+          {
+            name: "Gonzalo",
+            secondName: "Erick",
+            motherLastName: "Davila",
+            fatherLastName: "Ñahui",
+            edad: 21,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Jairo",
+            secondName: "Anthony",
+            motherLastName: "Caccya",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Gonzalo",
+            secondName: "Erick",
+            motherLastName: "Davila",
+            fatherLastName: "Ñahui",
+            edad: 21,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Renzo",
+            secondName: "Fernando",
+            motherLastName: "Velarde",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Renzo",
+            secondName: "Fernando",
+            motherLastName: "Velarde",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+        ]
+      },
+      {
+        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
+        career: "Medicina",
+        courses: [
+          "Matematica",
+          "Fisica",
+          "sexologia"
+        ],
+        students: [
+          {
+            name: "Gonzalo",
+            secondName: "Erick",
+            motherLastName: "Davila",
+            fatherLastName: "Ñahui",
+            edad: 21,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Jairo",
+            secondName: "Anthony",
+            motherLastName: "Caccya",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Gonzalo",
+            secondName: "Erick",
+            motherLastName: "Davila",
+            fatherLastName: "Ñahui",
+            edad: 21,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Renzo",
+            secondName: "Fernando",
+            motherLastName: "Velarde",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Renzo",
+            secondName: "Fernando",
+            motherLastName: "Velarde",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+        ]
+      },
+      {
+        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
+        career: "Medicina",
+        courses: [
+          "Matematica",
+          "Fisica",
+          "sexologia"
+        ],
+        students: [
+          {
+            name: "Gonzalo",
+            secondName: "Erick",
+            motherLastName: "Davila",
+            fatherLastName: "Ñahui",
+            edad: 21,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Jairo",
+            secondName: "Anthony",
+            motherLastName: "Caccya",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Gonzalo",
+            secondName: "Erick",
+            motherLastName: "Davila",
+            fatherLastName: "Ñahui",
+            edad: 21,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Renzo",
+            secondName: "Fernando",
+            motherLastName: "Velarde",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+          {
+            name: "Renzo",
+            secondName: "Fernando",
+            motherLastName: "Velarde",
+            fatherLastName: "Ñahui",
+            edad: 20,
+            codigo: "2013232231223",
+            birthdate: new Date,
+            photo: "",
+            sex: "F",
+          },
+        ]
+      },
     ]
   }
 

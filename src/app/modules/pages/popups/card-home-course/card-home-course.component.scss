@@ -1,0 +1,19 @@
+.content-course{
+    // width: 380px;
+    height: 650px;
+    max-height: 87%;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .sect{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media ( width < 640px) {
+    p{
+        margin-bottom: 5px;
+    }
+}

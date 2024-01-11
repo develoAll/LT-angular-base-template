@@ -1,4 +1,5 @@
-<div class="bg-white w-full h-36 rounded-xl flex justify-between items-center p-4 relative content-card-course">
+<div class="bg-white w-full h-36 rounded-xl flex justify-between items-center p-4 relative cursor-pointer 
+    content-card-course" (click)="detailCardPopup()">
     <div class="w-[6.5rem] h-[6.5rem] rounded-full">
         <img class="w-full h-full rounded-full" [src]="listCardTempalte.logo" alt="">
     </div>
@@ -7,7 +8,7 @@
         <p>{{listCardTempalte.courses.length}} Cursos</p>
     </div>
     <div class="px-3">
-        <p class="text-5xl">{{listCardTempalte.students}}</p>
+        <p class="text-5xl">{{listCardTempalte.students.length}}</p>
         <p>Alumnos</p>
     </div>
     <div class="absolute text-white text-center w-full opacity-0 p-8">
