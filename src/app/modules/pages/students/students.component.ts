@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonComponentsModule } from '../../../shared/modules/common-components.module';
+import { StudentsService } from '../../../shared/services/students.service';
 
 @Component({
   selector: 'app-students',
@@ -16,6 +17,7 @@ export class StudentsComponent implements OnInit{
 
   constructor(
     private _formBuilder: FormBuilder,
+    private _studentsService: StudentsService
   ){
     this.registerForm = this.createFormValue()
   }
@@ -28,8 +30,8 @@ export class StudentsComponent implements OnInit{
     return this._formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(50)]],
       secondName: ['', [Validators.required, Validators.maxLength(50)]],
-      motherLtName: ['', [Validators.required, Validators.maxLength(50)]],
-      fatherLtName: ['', [Validators.required, Validators.maxLength(50)]],
+      motherLastName: ['', [Validators.required, Validators.maxLength(50)]],
+      fatherLastName: ['', [Validators.required, Validators.maxLength(50)]],
       nickname: [ '', [Validators.required, Validators.maxLength(50)]],
       edad: ['', [Validators.required, Validators.maxLength(3)]],
       codigo: [ '', [Validators.required, Validators.minLength(10)]],
@@ -48,7 +50,10 @@ export class StudentsComponent implements OnInit{
   
 
   onSubmit(){
-    console.log(this.registerForm.value);
+    this._studentsService.createStudent(this.registerForm.value).subscribe((response) => {
+      console.log("Respondio esto");
+      console.log(response);
+    })
   }
 
 }
