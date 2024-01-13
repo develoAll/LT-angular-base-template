@@ -1,27 +1,21 @@
-# LTAngularBaseTemplate
+# Aplicación de prueba con sugerencias de buenas practicas y formas de estructurar un proyecto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+## 1 Recursos necesarios necesarios
 
-## Development server
+### 1.1  Crear el archivo ".env"
+>Crear el archivo en la raiz del proyecto, es necesario ya que se esta usando la libreria
+>>ng add @ngx-env/builder
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+>Dentro del archivo ".env" se deben incluir las siguiente variables, ya que se usa en los "environment.ts", no es necesario ponerle un valor ya por ahora solo se usa como pruebas
+>>- NG_APP_TEXT=""
+>>- NG_APP_API=""
 
-## Code scaffolding
+## 2 Levantar el proyecto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+>Se configuro algunos SCRIPTS para usar los environment
+>>- npm run start
+>>- npm run start-dev
+>>- npm run start-qa
+>>- npm run start-prod
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+>Es recomendable levantarlo con "npm run start" o "npm run start-dev"

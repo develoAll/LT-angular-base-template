@@ -18,8 +18,7 @@ const mat_modules = [
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  // MatFormFieldAppearance
-]
+  ]
 
 
 @NgModule({
