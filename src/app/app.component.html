@@ -1,43 +1,45 @@
-<div class="content">
-    <div class="navbar">
-        <div class="icon_nav">
-            <img src="https://www.unfv.edu.pe/images/logo_aniversario.png" alt="">
+<div class="flex flex-col justify-between h-full">
+    <div class="content">
+        <div class="navbar">
+            <div class="icon_nav">
+                <img src="https://www.unfv.edu.pe/images/logo_aniversario.png" alt="">
+            </div>
+            <ul class="header_lu">
+                <li class="header_li" (click)="navHeader('home')">
+                    <a href="">NOSOTROS</a>
+                    <div class="icon_title">
+                        <mat-icon
+                            svgIcon="heroicons_solid:plus">
+                        </mat-icon>
+                    </div>
+                </li>
+                <li class="header_li" (click)="navHeader('students')">
+                    <a href="">CARRERAS</a>
+                    <div class="icon_title">
+                        <mat-icon
+                            svgIcon="heroicons_solid:plus">
+                        </mat-icon>
+                    </div>
+                </li>
+                <li class="header_li" routerLink="/students">
+                    <a href="">ALUMNOS</a>
+                    <div class="icon_title">
+                        <mat-icon
+                            svgIcon="heroicons_solid:plus">
+                        </mat-icon>
+                    </div>
+                </li>
+                <li class="header_li" routerLink="/students">
+                    <a href="">OTROS</a>
+                    <div class="icon_title">
+                        <mat-icon
+                            svgIcon="heroicons_solid:plus">
+                        </mat-icon>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <ul class="header_lu">
-            <li class="header_li" (click)="navHeader('home')">
-                <a href="">NOSOTROS</a>
-                <div class="icon_title">
-                    <mat-icon
-                        svgIcon="heroicons_solid:plus">
-                    </mat-icon>
-                </div>
-            </li>
-            <li class="header_li" (click)="navHeader('students')">
-                <a href="">CARRERAS</a>
-                <div class="icon_title">
-                    <mat-icon
-                        svgIcon="heroicons_solid:plus">
-                    </mat-icon>
-                </div>
-            </li>
-            <li class="header_li" routerLink="/students">
-                <a href="">ALUMNOS</a>
-                <div class="icon_title">
-                    <mat-icon
-                        svgIcon="heroicons_solid:plus">
-                    </mat-icon>
-                </div>
-            </li>
-            <li class="header_li" routerLink="/students">
-                <a href="">OTROS</a>
-                <div class="icon_title">
-                    <mat-icon
-                        svgIcon="heroicons_solid:plus">
-                    </mat-icon>
-                </div>
-            </li>
-        </ul>
     </div>
+    <router-outlet></router-outlet>
+    <app-footer/>
 </div>
-<router-outlet></router-outlet>
-<app-footer/>

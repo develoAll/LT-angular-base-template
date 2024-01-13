@@ -11,9 +11,11 @@ export interface Student {
     secondName: string,
     motherLastName: string,
     fatherLastName: string,
+    nickname: string,
     edad: number,
     codigo: string,
     birthdate: Date,
     photo: string,
     sex: string,
+    mail: string
 }

@@ -1,0 +1,73 @@
+@use '@angular/material/core/theming/_theming' as mat;
+
+// $theme The theme map returned from `define-light-theme` or `define-dark-theme`.
+
+@import url('./colors_theme.scss');
+
+.mat-mdc-form-field.mat-form-field-appearance-outline {
+    .mat-mdc-text-field-wrapper {
+        // min-height: 48px;
+
+        .mat-mdc-form-field-infix {
+            min-height: 48px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+    }
+}
+
+/* "outline" appearance */
+.mat-mdc-form-field.mat-form-field-appearance-outline {
+
+    &.mat-form-field-invalid{
+        .mdc-text-field--invalid{
+            .mdc-notched-outline__leading,
+            .mdc-notched-outline__notch,
+            .mdc-notched-outline__trailing {
+                border-color: red;
+            }
+        }
+        .mat-mdc-form-field-subscript-wrapper{
+            .mat-mdc-form-field-error-wrapper{
+                mat-error {
+                    color: red;
+                }
+            }
+        }
+    }
+
+
+    &.mat-focused:not(.mat-form-field-invalid) {
+
+        /* Invalid */
+        &.mat-form-field-invalid {
+            .mdc-notched-outline__leading,
+            .mdc-notched-outline__notch,
+            .mdc-notched-outline__trailing {
+                border-width: 1px;
+                border-color: red;
+            }
+        }
+
+        /* Primary */
+        &.mat-primary {
+
+            .mdc-notched-outline__leading,
+            .mdc-notched-outline__notch,
+            .mdc-notched-outline__trailing {
+                border-width: 1px;
+            }
+        }
+
+        /* Accent */
+        &.mat-accent {
+
+            .mdc-notched-outline__leading,
+            .mdc-notched-outline__notch,
+            .mdc-notched-outline__trailing {
+                border-width: 1px;
+            }
+        }
+    }
+
+}

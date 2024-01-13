@@ -1,0 +1,35 @@
+.conteiner-input{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    .item-photo{
+        grid-row: 1/6;
+        img {
+            border: 1px solid #e5e7eb;
+            padding: 1rem;
+            max-height: 360px;
+        }
+    }
+}
+
+@media ( width < 1280px) {
+    .conteiner-input{
+        grid-template-columns: repeat(2, 1fr);
+        .item-photo{
+            grid-row: 1/7;
+            img {
+                max-height: 423px;
+            }
+        }
+    }
+}
+
+@media ( width < 640px) {
+    .conteiner-input{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(15, 1fr);
+        .item-photo{
+            grid-row: 1/6;
+        }
+    }
+}
