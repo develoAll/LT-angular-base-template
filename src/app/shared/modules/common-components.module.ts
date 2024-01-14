@@ -9,7 +9,8 @@ import {MatInputModule} from '@angular/material/input';
 
 const modules = [
   FormsModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  CommonModule
 ];
 
 const mat_modules = [
@@ -18,7 +19,7 @@ const mat_modules = [
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  ]
+]
 
 
 @NgModule({

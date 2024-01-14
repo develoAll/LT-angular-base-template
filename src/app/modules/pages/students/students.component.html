@@ -7,80 +7,79 @@
         <form (ngSubmit)="onSubmit()" [formGroup]="registerForm"
         class="flex flex-col gap-8">
             <div class="conteiner-input">
-                <div class="item-photo flex flex-col justify-between gap-4">
-                    <img [src]="imgSrc" alt="" class="h-full">
-                    <div>
-                        <span class="text-primary-ir ft-14 pb-1 w-full text-left">Ruta de imagen</span>
-                        <mat-form-field class="w-full">
-                            <input matInput formControlName="photo">
-                            <mat-error>El campo Foto es requerido</mat-error>
-                        </mat-form-field>
-                    </div>
+                <div class="item-photo" [appNotImage]="imgSrc">
                 </div>
-                <div class="item-input">
+                <div class="item-route-img">
+                    <span class="text-primary-ir ft-14 pb-1 w-full text-left">Ruta de imagen</span>
+                    <mat-form-field class="w-full">
+                        <input matInput formControlName="photo">
+                        <mat-error>El campo Foto es requerido</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Primer Nombre</span>
                     <mat-form-field class="w-full">
                         <input matInput formControlName="name">
                         <mat-error>El campo Primer Nombre es requerido</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="item-input">
+                <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Segundo nombre</span>
                     <mat-form-field class="w-full">
                         <input matInput formControlName="secondName">
                         <mat-error>El campo Segundo Nombre es requerido</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="item-input">
+                <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Apodo</span>
                     <mat-form-field class="w-full">
                         <input matInput formControlName="nickname">
                         <mat-error>El campo Apodo Nombre es requerido</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="item-input">
+                <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Apellido paterno</span>
                     <mat-form-field class="w-full">
                         <input matInput formControlName="fatherLastName">
                         <mat-error>El campo Apellido Paterno es requerido</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="item-input">
+                <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Apellido materno</span>
                     <mat-form-field class="w-full">
                         <input matInput formControlName="motherLastName">
                         <mat-error>El campo Apellido Materno es requerido</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="item-input">
+                <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Edad</span>
                     <mat-form-field class="w-full">
                         <input matInput formControlName="edad">
                         <mat-error>El campo Edad es requerido</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="item-input">
+                <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Codigo universitario</span>
                     <mat-form-field class="w-full">
                         <input matInput formControlName="codigo">
                         <mat-error>El campo Codigo Universitario es requerido</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="item-input">
+                <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Fecha de nacimiento</span>
                     <mat-form-field class="w-full">
                         <input matInput formControlName="birthdate">
                         <mat-error>El campo Fecha de Nacimiento es requerido</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="item-input">
+                <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Genero</span>
                     <mat-form-field class="w-full">
                         <input matInput formControlName="sex">
                         <mat-error>El campo Genero es requerido</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="item-input">
+                <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Correo electronico</span>
                     <mat-form-field class="w-full">
                         <input matInput formControlName="mail">

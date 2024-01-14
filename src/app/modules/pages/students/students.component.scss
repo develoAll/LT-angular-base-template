@@ -3,12 +3,15 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     .item-photo{
-        grid-row: 1/6;
-        img {
-            border: 1px solid #e5e7eb;
-            padding: 1rem;
-            max-height: 336px;
-        }
+        grid-row: span 4;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border: 1px solid #e5e7eb;
+    }
+    .item-route-img{
+        grid-row: 5/6;
+        grid-column: 1/2;
     }
 }
 
@@ -16,12 +19,13 @@
     .conteiner-input{
         grid-template-columns: repeat(2, 1fr);
         .item-photo{
-            grid-row: 1/7;
-            img {
-                max-height: 423px;
-            }
+            grid-row: span 5;
         }
-    }
+        .item-route-img{
+            grid-row: 6/7;
+            grid-column: 1/2;
+        }
+}
 }
 
 @media ( width < 640px) {

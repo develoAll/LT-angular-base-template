@@ -1,6 +1,6 @@
 # Aplicación de prueba con sugerencias de buenas practicas y formas de estructurar un proyecto
 
-## 1 Recursos necesarios necesarios
+## 1 Recursos necesarios
 
 ### 1.1  Crear el archivo ".env"
 >Crear el archivo en la raiz del proyecto, es necesario ya que se esta usando la libreria

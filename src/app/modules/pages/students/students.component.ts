@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonComponentsModule } from '../../../shared/modules/common-components.module';
 import { StudentsService } from '../../../shared/services/students.service';
+import { NotImageDirective } from '../../../shared/directives/not-image.directive';
 
 @Component({
   selector: 'app-students',
   standalone: true,
-  imports: [CommonComponentsModule],
+  imports: [CommonComponentsModule, NotImageDirective],
   templateUrl: './students.component.html',
   styleUrl: './students.component.scss'
 })
@@ -36,7 +37,7 @@ export class StudentsComponent implements OnInit{
       edad: ['', [Validators.required, Validators.maxLength(3)]],
       codigo: [ '', [Validators.required, Validators.minLength(10)]],
       birthdate: ['', [Validators.required]],
-      photo: ['https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg', [Validators.required]],
+      photo: ['', [Validators.required]],
       sex: ['', [Validators.required]],
       mail: ['', [Validators.required, Validators.email]],
     })  
