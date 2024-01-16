@@ -1,10 +1,10 @@
 <div class="bg-white w-full h-36 rounded-xl flex justify-between items-center p-4 relative cursor-pointer 
     content-card-course" (click)="detailCardPopup()">
     <div class="w-[6.5rem] h-[6.5rem] rounded-full">
-        <img class="w-full h-full rounded-full" [src]="listCardTempalte.logo" alt="">
+        <img class="w-full h-full rounded-full" [src]="listCardTempalte.image" alt="">
     </div>
     <div class="px-3 text-center">
-        <h3>{{listCardTempalte.career}}</h3>
+        <h3>{{listCardTempalte.title}}</h3>
         <p>{{listCardTempalte.courses.length}} Cursos</p>
     </div>
     <div class="px-3">

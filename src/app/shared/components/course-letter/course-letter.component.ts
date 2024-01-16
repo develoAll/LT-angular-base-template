@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CardCourse } from '../../models/request/course-letter-request';
 import { MatDialog } from '@angular/material/dialog';
 import { CardHomeCourseComponent } from '../../../modules/pages/popups/card-home-course/card-home-course.component';
+import { CardCareer } from '../../models/response/carrer-card-response.interface';
 
 @Component({
   selector: 'app-course-letter',
@@ -12,9 +13,7 @@ import { CardHomeCourseComponent } from '../../../modules/pages/popups/card-home
 })
 export class CourseLetterComponent {
 
-  // listCardTempalte: CardCourse = {} as CardCourse;
-
-  @Input() listCardTempalte: CardCourse = {} as CardCourse;
+  @Input() listCardTempalte: CardCareer = {} as CardCareer;
 
   constructor(
     private _dialog: MatDialog

@@ -3,6 +3,8 @@ import { CommonComponentsModule } from '../../../shared/modules/common-component
 import { CourseLetterComponent } from '../../../shared/components/course-letter/course-letter.component';
 import { CardCourse } from '../../../shared/models/request/course-letter-request';
 import { NgOptimizedImage } from '@angular/common';
+import { CardCareer } from '../../../shared/models/response/carrer-card-response.interface';
+import { CareerService } from '../../../shared/services/career.service';
 
 @Component({
   selector: 'app-home',
@@ -13,543 +15,56 @@ import { NgOptimizedImage } from '@angular/common';
 })
 export class HomeComponent {
 
-  cardTempalte: CardCourse[] = [];
+  cardTempalte: CardCareer[] = [];
 
-  constructor(){
-    this.cardTempalte = [
-      {
-        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: [
-          {
-            name: "Gonzalo",
-            secondName: "Erick",
-            motherLastName: "Davila",
-            fatherLastName: "Ñahui",
-            nickname: "mongosaurio",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Jairo",
-            secondName: "Anthony",
-            motherLastName: "Caccya",
-            fatherLastName: "Ñahui",
-            nickname: "weberto",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Raul",
-            secondName: "Jhonatan",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "pelao",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Renzo",
-            secondName: "Fernando",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "menso",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Alejandro",
-            secondName: "Ruben",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "miPapi",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-        ]
-      },
-      {
-        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: [
-          {
-            name: "Gonzalo",
-            secondName: "Erick",
-            motherLastName: "Davila",
-            fatherLastName: "Ñahui",
-            nickname: "mongosaurio",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Jairo",
-            secondName: "Anthony",
-            motherLastName: "Caccya",
-            fatherLastName: "Ñahui",
-            nickname: "weberto",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Raul",
-            secondName: "Jhonatan",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "pelao",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Renzo",
-            secondName: "Fernando",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "menso",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Alejandro",
-            secondName: "Ruben",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "miPapi",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-        ]
-      },
-      {
-        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: [
-          {
-            name: "Gonzalo",
-            secondName: "Erick",
-            motherLastName: "Davila",
-            fatherLastName: "Ñahui",
-            nickname: "mongosaurio",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Jairo",
-            secondName: "Anthony",
-            motherLastName: "Caccya",
-            fatherLastName: "Ñahui",
-            nickname: "weberto",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Raul",
-            secondName: "Jhonatan",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "pelao",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Renzo",
-            secondName: "Fernando",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "menso",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Alejandro",
-            secondName: "Ruben",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "miPapi",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-        ]
-      },
-      {
-        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: [
-          {
-            name: "Gonzalo",
-            secondName: "Erick",
-            motherLastName: "Davila",
-            fatherLastName: "Ñahui",
-            nickname: "mongosaurio",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Jairo",
-            secondName: "Anthony",
-            motherLastName: "Caccya",
-            fatherLastName: "Ñahui",
-            nickname: "weberto",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Raul",
-            secondName: "Jhonatan",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "pelao",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Renzo",
-            secondName: "Fernando",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "menso",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Alejandro",
-            secondName: "Ruben",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "miPapi",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-        ]
-      },
-      {
-        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: [
-          {
-            name: "Gonzalo",
-            secondName: "Erick",
-            motherLastName: "Davila",
-            fatherLastName: "Ñahui",
-            nickname: "mongosaurio",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Jairo",
-            secondName: "Anthony",
-            motherLastName: "Caccya",
-            fatherLastName: "Ñahui",
-            nickname: "weberto",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Raul",
-            secondName: "Jhonatan",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "pelao",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Renzo",
-            secondName: "Fernando",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "menso",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Alejandro",
-            secondName: "Ruben",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "miPapi",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-        ]
-      },
-      {
-        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: [
-          {
-            name: "Gonzalo",
-            secondName: "Erick",
-            motherLastName: "Davila",
-            fatherLastName: "Ñahui",
-            nickname: "mongosaurio",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Jairo",
-            secondName: "Anthony",
-            motherLastName: "Caccya",
-            fatherLastName: "Ñahui",
-            nickname: "weberto",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Raul",
-            secondName: "Jhonatan",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "pelao",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Renzo",
-            secondName: "Fernando",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "menso",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Alejandro",
-            secondName: "Ruben",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "miPapi",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-        ]
-      },
-      {
-        logo: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
-        career: "Medicina",
-        courses: [
-          "Matematica",
-          "Fisica",
-          "sexologia"
-        ],
-        students: [
-          {
-            name: "Gonzalo",
-            secondName: "Erick",
-            motherLastName: "Davila",
-            fatherLastName: "Ñahui",
-            nickname: "mongosaurio",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Jairo",
-            secondName: "Anthony",
-            motherLastName: "Caccya",
-            fatherLastName: "Ñahui",
-            nickname: "weberto",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Raul",
-            secondName: "Jhonatan",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "pelao",
-            edad: 21,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Renzo",
-            secondName: "Fernando",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "menso",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-          {
-            name: "Alejandro",
-            secondName: "Ruben",
-            motherLastName: "Velarde",
-            fatherLastName: "Ñahui",
-            nickname: "miPapi",
-            edad: 20,
-            codigo: "2013232231223",
-            birthdate: new Date,
-            photo: "",
-            sex: "F",
-            mail: "asd",
-          },
-        ]
-      }
-    ]
+  constructor(
+    private _careerService: CareerService
+  ){
+    // this.cardTempalte = [
+    //   {
+    //     id: 1,
+    //     image: "https://blog.ayzweb.com/wp-content/uploads/homer.gif",
+    //     title: "Medicina",
+    //     description: "probando",
+    //     courses: [
+    //       {
+    //         id: 1,
+    //         title: "Matematica"
+    //       },
+    //       {
+    //         id: 2,
+    //         title: "Fisica"
+    //       },
+    //       {
+    //         id: 3,
+    //         title: "sexologia"
+    //       }
+    //     ],
+    //     students: [
+    //       {
+    //         id: 1,
+    //         name: "Gonzalo"
+    //       },
+    //       {
+    //         id: 2,
+    //         name: "Jairo"
+    //       },
+    //       {
+    //         id: 3,
+    //         name: "Gilbert"
+    //       }
+    //     ]
+    //   },
+    // ]
+    this.getCardCareers()
   }
+
+
+  getCardCareers(){
+    this._careerService.getAllCareer().subscribe( (response) => {
+      this.cardTempalte = response.data
+    })
+  }
+
 
 }

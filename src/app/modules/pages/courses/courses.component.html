@@ -1,1 +1,15 @@
-
+<swiper-container class="h-[700px] py-20 px-56">
+    @for (item of listCourse; track item.id) {
+        <swiper-slide>
+            <div class="grid grid-cols-2 h-full">
+                <div
+                    [appNotImage]="item.image">
+                </div>
+                <div class="p-8 text-center self-center">
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.description}}</p>
+                </div>
+            </div>
+        </swiper-slide>
+    }
+</swiper-container>

@@ -1,6 +1,6 @@
 import { Component, Inject, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { CardCourse } from '../../../../shared/models/request/course-letter-request';
+import { CardCareer } from '../../../../shared/models/response/carrer-card-response.interface';
 
 @Component({
   selector: 'app-card-home-course',
@@ -14,7 +14,7 @@ export class CardHomeCourseComponent {
   constructor(
     private _matDialogRef: MatDialogRef<CardHomeCourseComponent>,
     @Inject(MAT_DIALOG_DATA)
-    public data: CardCourse
+    public data: CardCareer
   ){
     
   }

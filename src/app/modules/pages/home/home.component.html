@@ -21,7 +21,7 @@
                 <h1>Nuestras mejores categorías</h1>
             </div>
             <div class="grid-content">
-                @for (item of cardTempalte; track item.career) {
+                @for (item of cardTempalte; track item.id) {
                 <app-course-letter [listCardTempalte]="item"></app-course-letter>
                 }
             </div>

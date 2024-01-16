@@ -1,1 +1,51 @@
-<p>careers works!</p>
+<div class="px-[7%] py-14">
+    <div>
+        <H2>Incribir Cursos</H2>
+    </div>
+    <div class="conteiner-form">
+        <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="flex flex-col gap-8">
+            <div class="conteiner-input">
+                <div class="item-photo" [appNotImage]="registerForm.get('image')?.value">
+                </div>
+                <div class="item-name">
+                    <span class="text-primary-ir ft-14 pb-1 w-full text-left">Nombre de la carrera</span>
+                    <mat-form-field class="w-full">
+                        <input matInput formControlName="title">
+                        <mat-error>El campo Nombre de carrera es requerido</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="item-description">
+                    <span class="text-primary-ir ft-14 pb-1 w-full text-left">Descripción</span>
+                    <mat-form-field class="w-full">
+                        <input matInput formControlName="description">
+                        <mat-error>El campo Descripción es requerido</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="item-route-img">
+                    <span class="text-primary-ir ft-14 pb-1 w-full text-left">Ruta de imagen</span>
+                    <mat-form-field class="w-full">
+                        <input matInput formControlName="image">
+                        <mat-error>El campo Imagen es requerido</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="item-courses flex flex-col">
+                    <span class="text-primary-ir ft-14 pb-1 w-full text-left">Lista de Cursos {{checkedCourses}} / 5</span>
+                    <div class="overflow-y-scroll h-[308px]">
+                        @for (item of listCourses; track item.id) {
+                            <mat-checkbox 
+                                [disabled]="checkedCourses == 5 && item.estado == false"
+                                [color]="'primary'"
+                                ngDefaultControl 
+                                [ngModelOptions]="{standalone: true}"
+                                [(ngModel)]="item.estado">
+                                {{item.title}}
+                            </mat-checkbox>
+                        }
+                    </div>
+                </div>
+            </div>
+            <button mat-raised-button color="primary" [disabled]="registerForm.invalid || checkedCourses != 5"
+                class="w-[32.5%] self-end max-xl:w-[49%] max-sm:w-full">Registrar</button>
+        </form>
+    </div>
+</div>
