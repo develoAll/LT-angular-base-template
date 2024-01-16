@@ -5,6 +5,7 @@ import { StudentsService } from '../../../shared/services/students.service';
 import { NotImageDirective } from '../../../shared/directives/not-image.directive';
 import { MatDialog } from '@angular/material/dialog';
 import { ResponseApiComponent } from '../popups/response-api/response-api.component';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-students',
@@ -22,6 +23,7 @@ export class StudentsComponent implements OnInit{
     private _formBuilder: FormBuilder,
     private _studentsService: StudentsService,
     private _dialog: MatDialog,
+    private spinner: NgxSpinnerService,
   ){
     this.registerForm = this.createFormValue()
   }
@@ -37,8 +39,8 @@ export class StudentsComponent implements OnInit{
       motherLastName: ['', [Validators.required, Validators.maxLength(50)]],
       fatherLastName: ['', [Validators.required, Validators.maxLength(50)]],
       nickname: [ '', [Validators.required, Validators.maxLength(50)]],
-      edad: ['', [Validators.required, Validators.maxLength(3)]],
-      codigo: [ '', [Validators.required, Validators.minLength(10)]],
+      edad: ['', [Validators.required, Validators.maxLength(3), Validators.pattern(/^[0-9]*$/)]],
+      codigo: [ '', [Validators.required, Validators.minLength(10), Validators.pattern(/^[0-9]*$/)]],
       birthdate: ['', [Validators.required]],
       photo: ['', [Validators.required]],
       sex: ['', [Validators.required]],
@@ -54,11 +56,18 @@ export class StudentsComponent implements OnInit{
   
 
   onSubmit(){
+    this.spinner.show();
     this._studentsService.createStudent(this.registerForm.value).subscribe((response) => {
       if (response.status) {
+        this.spinner.hide();
         this._dialog.open(ResponseApiComponent,{
           disableClose: true,
+        }).afterClosed().subscribe(result => {
+          this.registerForm.reset();
         })
+      }else{
+        this.spinner.hide();
+        alert("Hubo un error inesperado, espere la chocolatada")
       }
     })
   }

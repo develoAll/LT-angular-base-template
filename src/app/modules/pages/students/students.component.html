@@ -54,28 +54,43 @@
                 <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Edad</span>
                     <mat-form-field class="w-full">
-                        <input matInput formControlName="edad">
+                        <input matInput maxlength="2" formControlName="edad">
                         <mat-error>El campo Edad es requerido</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Codigo universitario</span>
                     <mat-form-field class="w-full">
-                        <input matInput formControlName="codigo">
+                        <input matInput maxlength="10" formControlName="codigo">
                         <mat-error>El campo Codigo Universitario es requerido</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Fecha de nacimiento</span>
                     <mat-form-field class="w-full">
-                        <input matInput formControlName="birthdate">
+                        <!-- <input matInput formControlName="birthdate"> -->
+                        <input
+                            autocomplete="false" matInput
+                            [matDatepicker]="pickerEnd"
+                            readonly formControlName="birthdate">
+                        <mat-datepicker-toggle matIconSuffix
+                            [for]="pickerEnd"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerEnd></mat-datepicker>
                         <mat-error>El campo Fecha de Nacimiento es requerido</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
                     <span class="text-primary-ir ft-14 pb-1 w-full text-left">Genero</span>
-                    <mat-form-field class="w-full">
+                    <!-- <mat-form-field class="w-full">
                         <input matInput formControlName="sex">
+                        <mat-error>El campo Genero es requerido</mat-error>
+                    </mat-form-field> -->
+                    <mat-form-field class="w-full">
+                        <mat-select formControlName="sex" placeholder="Seleccionar">
+                            <mat-option [value]="'M'">Masculino</mat-option>
+                            <mat-option [value]="'F'">Femenino</mat-option>
+                            <mat-option [value]="'B'">Binario</mat-option>
+                        </mat-select>
                         <mat-error>El campo Genero es requerido</mat-error>
                     </mat-form-field>
                 </div>
@@ -92,3 +107,11 @@
         </form>
     </div>
 </div>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="cube-transition"
+>
+  <p style="font-size: 20px; color: white; margin-top: 80px;">Cargando...</p>
+</ngx-spinner>

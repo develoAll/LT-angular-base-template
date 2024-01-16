@@ -9,6 +9,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 const modules = [
   FormsModule,
@@ -24,7 +26,9 @@ const mat_modules = [
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 ]
 
 

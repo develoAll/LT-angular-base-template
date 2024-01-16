@@ -37,13 +37,14 @@ export class CareersComponent implements OnInit{
 
   createFormValue(){
     return this._formBuilder.group({
-      title: ['', [Validators.required, Validators.maxLength(225)]],
-      image: ['', [Validators.required, Validators.maxLength(500)]],
+      title: ['', [Validators.required, Validators.maxLength(50)]],
+      image: ['', [Validators.required, Validators.minLength(1)]],
       description: ['', [Validators.required, Validators.maxLength(150)]],
     })  
   }
 
   onSubmit(){
+    this.spinner.show();
     const filtrado = this.listCourses.filter( data => 
       data.estado
     ).map( data => 
@@ -56,6 +57,7 @@ export class CareersComponent implements OnInit{
     
     this._careerService.postCreateCarrer(request).subscribe((response) => {
       if(response.status){
+        this.spinner.hide();
         this._dialog.open(ResponseApiComponent,{
           disableClose: true,
         }).afterClosed().subscribe(result => {
@@ -64,6 +66,9 @@ export class CareersComponent implements OnInit{
             item => ({ ...item, estado: false})
           );
         })
+      }else{
+        this.spinner.hide();
+        alert("Hubo un error inesperado, espere la chocolatada")
       }
     })
   }

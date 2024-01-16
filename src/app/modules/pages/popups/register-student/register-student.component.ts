@@ -8,6 +8,7 @@ import { CareerService } from '../../../../shared/services/career.service';
 import { SimpleCareer } from '../../../../shared/models/response/career-response-interface';
 import { EnrollCareer } from '../../../../shared/models/request/carrer-request.interface';
 import { ResponseApiComponent } from '../response-api/response-api.component';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-register-student',
@@ -28,6 +29,7 @@ export class RegisterStudentComponent {
     private _studentsService: StudentsService,
     private _careerService: CareerService,
     private _formBuilder: FormBuilder,
+    private spinner: NgxSpinnerService,
   ){
     this.registerForm = this.createFormValue();
     this.getAllStudent();
@@ -54,16 +56,21 @@ export class RegisterStudentComponent {
   }
 
   onSubmit(){
+    this.spinner.show();
     const request: EnrollCareer = {
       ...this.registerForm.value,
     }
     this._studentsService.createEnrollCarer(request).subscribe( (response) => {
       if(response.status){
+        this.spinner.hide();
         this._dialog.open(ResponseApiComponent,{
           disableClose: true,
         }).afterClosed().subscribe(result => {
           this.close()
         })
+      }else {
+        this.spinner.hide();
+        alert("Hubo un error inesperado, espere la chocolatada")
       }
     })
     

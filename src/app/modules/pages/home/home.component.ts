@@ -55,7 +55,6 @@ export class HomeComponent {
 
   openRegisterStudent(){
     this._dialog.open(RegisterStudentComponent,{
-      width: "25%",
       disableClose: true,
     })
   }

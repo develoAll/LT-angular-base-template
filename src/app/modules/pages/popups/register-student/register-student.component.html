@@ -1,4 +1,4 @@
-<div class="p-8">
+<div class="p-8 max-w-[480px]">
     <div class="flex justify-between">
         <h2>Registrate!!!!</h2>
         <P class="cursor-pointer py-2 px-4" (click)="close()">X</P>
@@ -34,9 +34,17 @@
                     </mat-select>
                 </mat-form-field>
             </div>
-            <button mat-raised-button color="primary"
+            <button mat-raised-button color="primary" [disabled]="registerForm.invalid"
                 class="w-[32.5%] self-center my-6 max-sm:w-full">Registrar</button>
             <p class="pt-4 text-center">No te arrepentiras!!!</p>
         </div>
     </form>
 </div>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="cube-transition"
+>
+  <p style="font-size: 20px; color: white; margin-top: 80px;">Cargando...</p>
+</ngx-spinner>
