@@ -9,3 +9,8 @@ export interface CarrerWithCourses {
 interface Course {
     id: number
 }
+
+export interface EnrollCareer {
+    idStudent: number;
+    idCareer: number
+}

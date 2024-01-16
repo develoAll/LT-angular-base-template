@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonComponentsModule } from '../../../shared/modules/common-components.module';
 import { StudentsService } from '../../../shared/services/students.service';
 import { NotImageDirective } from '../../../shared/directives/not-image.directive';
+import { MatDialog } from '@angular/material/dialog';
+import { ResponseApiComponent } from '../popups/response-api/response-api.component';
 
 @Component({
   selector: 'app-students',
@@ -18,7 +20,8 @@ export class StudentsComponent implements OnInit{
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _studentsService: StudentsService
+    private _studentsService: StudentsService,
+    private _dialog: MatDialog,
   ){
     this.registerForm = this.createFormValue()
   }
@@ -52,8 +55,11 @@ export class StudentsComponent implements OnInit{
 
   onSubmit(){
     this._studentsService.createStudent(this.registerForm.value).subscribe((response) => {
-      console.log("Respondio esto");
-      console.log(response);
+      if (response.status) {
+        this._dialog.open(ResponseApiComponent,{
+          disableClose: true,
+        })
+      }
     })
   }
 

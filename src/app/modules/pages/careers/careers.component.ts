@@ -7,6 +7,8 @@ import { CourseResponseCheckBox } from '../../../shared/models/response/course-r
 import { CareerService } from '../../../shared/services/career.service';
 import { CarrerWithCourses } from '../../../shared/models/request/carrer-request.interface';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { MatDialog } from '@angular/material/dialog';
+import { ResponseApiComponent } from '../popups/response-api/response-api.component';
 
 @Component({
   selector: 'app-careers',
@@ -24,7 +26,8 @@ export class CareersComponent implements OnInit{
     private _formBuilder: FormBuilder,
     private _coursesService: CoursesService,
     private _careerService: CareerService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private _dialog: MatDialog,
   ){
     this.registerForm = this.createFormValue()
   }
@@ -52,12 +55,15 @@ export class CareersComponent implements OnInit{
     }
     
     this._careerService.postCreateCarrer(request).subscribe((response) => {
-      console.log("Respondio esto",response);
       if(response.status){
-        this.registerForm.reset();
-        this.listCourses = this.listCourses.map(
-          item => ({ ...item, estado: false})
-        );
+        this._dialog.open(ResponseApiComponent,{
+          disableClose: true,
+        }).afterClosed().subscribe(result => {
+          this.registerForm.reset();
+          this.listCourses = this.listCourses.map(
+            item => ({ ...item, estado: false})
+          );
+        })
       }
     })
   }

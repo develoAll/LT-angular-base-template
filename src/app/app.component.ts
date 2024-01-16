@@ -18,9 +18,7 @@ export class AppComponent {
 
   constructor(
     private router: Router
-  ){
-    // console.log(this.textEnv);
-  }
+  ){}
 
   navHeader( nav: string){
     this.router.navigate(['landing/'+ nav]);

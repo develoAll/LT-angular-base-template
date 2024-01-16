@@ -1,0 +1,42 @@
+<div class="p-8">
+    <div class="flex justify-between">
+        <h2>Registrate!!!!</h2>
+        <P class="cursor-pointer py-2 px-4" (click)="close()">X</P>
+        <!-- <mat-icon class="cursor-pointer text-black" (click)="close()" svgIcon="facebook_icon"></mat-icon> -->
+    </div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+        <div class="flex flex-col w-full">
+            <p>¡Bienvenido a la Comunidad Universitaria SIDERAL!!</p>
+            <p>Regístrate en Ponte en Carrera para que accedas a todos los beneficios.</p>
+            <P>**Acceso a Recursos Exclusivos:** Obtén acceso a recursos académicos, materiales de estudio y eventos
+                exclusivos que enriquecerán tu experiencia educativa.</P>
+            <P>**Conéctate con la Comunidad:** Únete a nuestra vibrante comunidad de estudiantes, profesores y personal.
+                Participa en foros, grupos de estudio y actividades extracurriculares.</P>
+            <h3>Seleciona el Alumno y la Carrera</h3>
+            <div class="flex flex-col w-full">
+                <span class="pb-1 w-full text-left">Estudiante</span>
+                <mat-form-field>
+                    <mat-select formControlName="idStudent" placeholder="Seleccionar">
+                        @for (item of itemStudent; track item.id) {
+                        <mat-option [value]="item.id">{{item.name}} {{item.fatherLastName}}
+                            {{item.motherLastName}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="flex flex-col w-full">
+                <span class="pb-1 w-full text-left">Carrera</span>
+                <mat-form-field>
+                    <mat-select formControlName="idCareer" placeholder="Seleccionar">
+                        @for (item of itemCareer; track item.id) {
+                        <mat-option [value]="item.id">{{item.title}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button color="primary"
+                class="w-[32.5%] self-center my-6 max-sm:w-full">Registrar</button>
+            <p class="pt-4 text-center">No te arrepentiras!!!</p>
+        </div>
+    </form>
+</div>

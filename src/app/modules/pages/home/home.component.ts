@@ -10,6 +10,8 @@ import { CoursesService } from '../../../shared/services/courses.service';
 import { NotImageDirective } from '../../../shared/directives/not-image.directive';
 
 import { register } from 'swiper/element/bundle';
+import { MatDialog } from '@angular/material/dialog';
+import { RegisterStudentComponent } from '../popups/register-student/register-student.component';
 register();
 
 @Component({
@@ -29,7 +31,8 @@ export class HomeComponent {
   constructor(
     private _careerService: CareerService,
     private _coursesService: CoursesService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private _dialog: MatDialog
   ){
     this.getCardCareers()
     this.getAllCourse()
@@ -50,5 +53,11 @@ export class HomeComponent {
     })
   }
 
+  openRegisterStudent(){
+    this._dialog.open(RegisterStudentComponent,{
+      width: "25%",
+      disableClose: true,
+    })
+  }
 
 }

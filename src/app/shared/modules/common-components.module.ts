@@ -8,6 +8,7 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/mater
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import {MatSelectModule} from '@angular/material/select';
 
 const modules = [
   FormsModule,
@@ -22,7 +23,8 @@ const mat_modules = [
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatSelectModule
 ]
 
 

@@ -21,16 +21,9 @@ export class CourseLetterComponent {
 
   detailCardPopup(){
     this._dialog.open(CardHomeCourseComponent, {
-      // disableClose: false,
       data: this.listCardTempalte,
-      // width: '',
-      // height: ''
     }).afterClosed().subscribe(result => {
-      if (result == true) {
-        // console.log("Hola mundo");     
-      }else{
-        // console.log("hola rata");
-      }
+     
     })
   }
 }

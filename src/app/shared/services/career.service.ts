@@ -5,6 +5,7 @@ import { GeneralResponseData } from '../models/common/common-response';
 import { Observable } from 'rxjs';
 import { CardCareer } from '../models/response/carrer-card-response.interface';
 import { CarrerWithCourses } from '../models/request/carrer-request.interface';
+import { SimpleCareer } from '../models/response/career-response-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,10 @@ export class CareerService {
 
   getAllCareer(): Observable<GeneralResponseData<CardCareer[]>>{
     return this._http.get<GeneralResponseData<CardCareer[]>>(`${this.urlWebApi}/getCardCareer`, { headers: this.headers });
+  }
+
+  getAllIdNameCareer(): Observable<GeneralResponseData<SimpleCareer[]>>{
+    return this._http.get<GeneralResponseData<SimpleCareer[]>>(`${this.urlWebApi}/getIdNameCareer`, { headers: this.headers });
   }
 
   postCreateCarrer(request: CarrerWithCourses): Observable<GeneralResponseData<''>>{
