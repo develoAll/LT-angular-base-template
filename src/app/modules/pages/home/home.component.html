@@ -14,7 +14,7 @@
             <img class="view" ngSrc="../../../../assets/images/home/portada.jpg" width="769.891" height="577.422" priority alt="">
         </div>
     </section>
-    <section class="bg-blue-200 px-[7%] py-14">
+    <section class="bg-blue-100 px-[7%] py-14">
         <div class="p-12 max-lg:p-0">
             <div class="text-center mb-12">
                 <h2 class="text-lg">CATEGORÍA DE CURSO</h2>
@@ -27,19 +27,52 @@
             </div>
         </div>
     </section>
-    <section class="bg-white px-[7%] py-14 max-lg:pt-6">
+    @if (listCourse.length>0) {
+        <section class="bg-white px-[7%] py-14">
+            <swiper-container class="h-[700px]" 
+            pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+            slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" 
+            coverflow-effect-depth="100" coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true" 
+            loop="false"
+            >
+                @for (item of listCourse; track item.id) {
+                    <swiper-slide>
+                        <div class="slider-item">
+                            <div
+                                [appNotImage]="item.image" class="slider-img">
+                            </div>
+                            <div class="p-8 text-center self-center slider-text">
+                                <h2>{{item.title}}</h2>
+                                <p>{{item.description}}</p>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                }
+            </swiper-container>
+        </section>
+    }
+    <section class="bg-blue-100 px-[7%] py-24 max-lg:pt-6">
         <div class="content-sec-three">
-            <img class="view rounded-full" ngSrc="../../../../assets/images/home/portada2.jpg" height="600"
-                width="600" alt="">
+            <!-- <img class="view rounded-full" ngSrc="../../../../assets/images/home/portada2.jpg" height="600"
+                width="600" alt=""> -->
+            <div [appNotImage]="'../../../../assets/images/home/portada2.jpg'" class="view"></div>
             <div class="text-info">
-                <h1 class="max-lg:text-center">Admisión Abierta 2024-I</h1>
-                <p class="max-lg:text-center">Contamos con cursos únicos en el Perú y el mundo, tales como, Ciencias del
+                <h1>Admisión Abierta 2024-I</h1>
+                <p>Contamos con cursos únicos en el Perú y el mundo, tales como, Ciencias del
                     fracaso, Ciencias del abandono, Medicina Astral, Obstetricia de Kinesiologas, Ingeniería de
                     Panadería nuclear, Derechos del dibujito, entre otros. ¿Y tú?, que esperas para iniciar el examen de
                     admisión, por que recuerda: "Tu fracaso es el éxito de otros, USC".
                 </p>
-                <button mat-raised-button color="primary">Primary</button>
+                <button mat-raised-button color="primary">Matriculate aqui!!</button>
             </div>
         </div>
     </section>
 </div>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="cube-transition"
+>
+  <p style="font-size: 20px; color: white; margin-top: 80px;">Cargando...</p>
+</ngx-spinner>

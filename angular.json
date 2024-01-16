@@ -31,7 +31,8 @@
             ],
             "styles": [
               "src/scss/angular-material/cuztom.scss",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-spinner/animations/cube-transition.css"
             ],
             "scripts": []
           },

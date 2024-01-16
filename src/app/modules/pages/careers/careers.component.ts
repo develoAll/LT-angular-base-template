@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonComponentsModule } from '../../../shared/modules/common-components.module';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NotImageDirective } from '../../../shared/directives/not-image.directive';
 import { CoursesService } from '../../../shared/services/courses.service';
-import { CourseResponse, CourseResponseCheckBox } from '../../../shared/models/response/course-response.interface';
+import { CourseResponseCheckBox } from '../../../shared/models/response/course-response.interface';
 import { CareerService } from '../../../shared/services/career.service';
 import { CarrerWithCourses } from '../../../shared/models/request/carrer-request.interface';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-careers',
   standalone: true,
-  imports: [CommonComponentsModule, NotImageDirective],
+  imports: [CommonComponentsModule, NotImageDirective ],
   templateUrl: './careers.component.html',
   styleUrl: './careers.component.scss'
 })
@@ -22,7 +23,8 @@ export class CareersComponent implements OnInit{
   constructor(
     private _formBuilder: FormBuilder,
     private _coursesService: CoursesService,
-    private _careerService: CareerService
+    private _careerService: CareerService,
+    private spinner: NgxSpinnerService
   ){
     this.registerForm = this.createFormValue()
   }
@@ -65,10 +67,12 @@ export class CareersComponent implements OnInit{
   }
 
   getAllCursos(){
+    this.spinner.show();
     this._coursesService.getAllCourses().subscribe((response) => {
       this.listCourses = response.data.map(
         item => ({ ...item, estado: false})
       );
+      this.spinner.hide();
     })
   }
 

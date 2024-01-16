@@ -17,10 +17,10 @@ export const routes: Routes = [
                 path: 'careers',
                 component: CareersComponent
             },
-            {
-                path: 'courses',
-                component: CoursesComponent
-            },
+            // {
+            //     path: 'courses',
+            //     component: CoursesComponent
+            // },
             {
                 path: 'students',
                 component: StudentsComponent
