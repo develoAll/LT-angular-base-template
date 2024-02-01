@@ -40,7 +40,7 @@ export class HomeComponent {
 
 
   getCardCareers(){
-    this.spinner.show();
+    // this.spinner.show();
     this._careerService.getAllCareer().subscribe( (response) => {
       this.cardTempalte = response.data;
       this.spinner.hide();
